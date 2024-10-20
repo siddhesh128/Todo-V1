@@ -48,7 +48,7 @@ export class AuthService {
         alertType: LOGIN_SUCCESS_ALERT,
         onConfirm: () => navigate("/todos"),
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error({ LOGIN_ERROR: "Error during login" }, error);
       Alert({ alertType: AUTHENTICATION_FAILED_ALERT });
     }
@@ -79,9 +79,8 @@ export class AuthService {
               alertType: REGISTER_SUCCESS_ALERT,
               onConfirm: () => navigate("/login"),
             });
-          } catch (err: any) {
-            if (err.response?.status === 409) {
-              // 409 indicates user already exists
+          } catch (err: unknown) {
+            if (axios.isAxiosError(err) && err.response?.status === 409) {
               setUsername("");
               setPassword("");
               Alert({ alertType: USER_ALREADY_EXISTS_ALERT });

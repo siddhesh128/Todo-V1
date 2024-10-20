@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const GlobalContainerStyled = styled.div<{ width?: string }>`
+const GlobalContainerStyled = styled.div<{ width?: string; height?: string }>`
   max-width: ${({ width }) => width || '100%'};
-  max-height:${({ height }) => height || '100%'};
+  max-height: ${({ height }) => height || '100%'};
   margin: 0 auto; 
   padding: 10px;
   padding-top: 20px;

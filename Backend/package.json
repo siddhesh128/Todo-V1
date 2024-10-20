@@ -4,7 +4,7 @@
   "description": "Backend for a Todo app built with Node.js, Express, and MySQL",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc --project",
+    "build": "tsc ",
     "dev": "ts-node-dev --respawn src/server.ts"
   },
   "author": "Abhijeet Chattar",

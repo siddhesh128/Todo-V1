@@ -33,6 +33,7 @@ const TaskList: React.FC<TaskListProps> = ({
                 TodoService.handleToggleCompleted(todo.id, setTodos, todos)
               }
             />
+           {/* <div dangerouslySetInnerHTML={{ __html: todo.task }} /> */}
             <span style={{ fontSize: "1.2em" }}>{todo.task}</span>
             {todo.taskImage && (
               <motion.div
